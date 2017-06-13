@@ -14,7 +14,7 @@ Board::Board(const sf::Texture & spriteMap)
     m_backRect.setSize(Sizes::BOARD_SIZE);
     m_backRect.setFillColor(Utilities::backgroundBlack);
     
-    //FIXME: add bg bits
+    m_background = std::make_shared<InanimateSprite>(spriteMap, Sizes::BOARD_SIZE, Location(0,0), "Level");
     
     for (InvisibleSpriteMap::const_iterator i = Locations::LADDER_MAP.begin(); i != Locations::LADDER_MAP.end(); ++i)
     {
@@ -33,22 +33,12 @@ Board::Board(const sf::Texture & spriteMap)
 void Board::draw(sf::RenderWindow & window)
 {
     window.draw(m_backRect);
-    
-    //REWRITE ME
-//    for (std::vector<std::unique_ptr<Ladder>>::const_iterator i = m_ladders.begin(); i != m_ladders.end(); ++i)
-//    {
-//        (*i) -> draw(window);
-//    }
-//    
-//    for (std::vector<std::shared_ptr<Girder>>::const_iterator i = m_girders.begin(); i != m_girders.end(); ++i)
-//    {
-//        (*i) -> draw(window);
-//    }
-//    
-//    m_peach -> draw(window);
+
+    m_background -> draw(window);
+    m_player -> draw(window);
 }
 
-//const std::shared_ptr<Peach> Board::getPeach()
-//{
-//    return m_peach;
-//}
+const std::shared_ptr<Player> Board::getPlayer()
+{
+    return m_player;
+}

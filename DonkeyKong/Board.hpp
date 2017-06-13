@@ -12,6 +12,7 @@
 #include <vector>
 #include <memory>
 #include "Sprite.hpp"
+#include "InanimateSprite.hpp"
 #include "Ladder.hpp"
 #include "Platform.hpp"
 #include "Player.hpp"
@@ -26,7 +27,7 @@ public:
     
 private:
     sf::RectangleShape m_backRect;
-    sf::Sprite m_background;
+    std::shared_ptr<InanimateSprite> m_background;
     std::vector<std::shared_ptr<Platform>> m_platforms;
     std::vector<std::shared_ptr<Ladder>> m_ladders;
     std::shared_ptr<Player> m_player;

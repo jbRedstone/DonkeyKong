@@ -15,7 +15,7 @@
 int main(int, char const**)
 {
     // Create the main window
-    sf::RenderWindow window(sf::VideoMode(800, 600), "SFML window");
+    sf::RenderWindow window(sf::VideoMode(Sizes::BOARD_SIZE.x, Sizes::BOARD_SIZE.y), "Save Mario!");
     window.setFramerateLimit(60);
     
     // Load a sprite to display
@@ -50,60 +50,60 @@ int main(int, char const**)
         }
         
         //REWRITE ME
-//        sf::Time frameTime = frameClock.restart();
-//        movement move(0,0);
-//        
+        sf::Time frameTime = frameClock.restart();
+        Movement move(0,0);
+        
 //        //FIXME: add ladder checks + gravity
-//        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
-//        {
-//            board.getPeach() -> animationSwitch("RunLeft");
-//            move.x -= WALK_SPEED;
-//            keyPressed = true;
-//            lastDirection = "Left";
-//        }
-//        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
-//        {
-//            board.getPeach() -> animationSwitch("RunRight");
-//            move.x += WALK_SPEED;
-//            keyPressed = true;
-//            lastDirection = "Right";
-//        }
-//        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
-//        {
-//            board.getPeach() -> animationSwitch("Climb");
-//            move.y += CLIMB_SPEED;
-//            keyPressed = true;
-//            lastDirection = "Climb";
-//        }
-//        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
-//        {
-//            board.getPeach() -> animationSwitch("Climb");
-//            move.x -= CLIMB_SPEED;
-//            keyPressed = true;
-//            lastDirection = "Climb";
-//        }
-//        
-//        board.getPeach() -> play();
-//        board.getPeach() -> move(move * frameTime.asSeconds());
-//        
-//        if (!keyPressed)
-//        {
-//            if (lastDirection.compare("Right") == 0)
-//            {
-//                board.getPeach() -> animationSwitch("StandRight");
-//            }
-//            else if (lastDirection.compare("Left") == 0)
-//            {
-//                board.getPeach() -> animationSwitch("StandLeft");
-//            }
-//            
-//            board.getPeach() -> stop();
-//            
-//        }
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
+        {
+            board.getPlayer() -> setCurrentAnimation("RunLeft");
+            move.x -= Utilities::WALK_SPEED;
+            keyPressed = true;
+            lastDirection = "Left";
+        }
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
+        {
+            board.getPlayer() -> setCurrentAnimation("RunRight");
+            move.x += Utilities::WALK_SPEED;
+            keyPressed = true;
+            lastDirection = "Right";
+        }
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
+        {
+            board.getPlayer() -> setCurrentAnimation("Climb");
+            move.y += Utilities::CLIMB_SPEED;
+            keyPressed = true;
+            lastDirection = "Climb";
+        }
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
+        {
+            board.getPlayer() -> setCurrentAnimation("Climb");
+            move.x -= Utilities::CLIMB_SPEED;
+            keyPressed = true;
+            lastDirection = "Climb";
+        }
+        
+        board.getPlayer() -> play();
+        board.getPlayer() -> move(move * frameTime.asSeconds());
+        
+        if (!keyPressed)
+        {
+            if (lastDirection.compare("Right") == 0)
+            {
+                board.getPlayer() -> setCurrentAnimation("StandRight");
+            }
+            else if (lastDirection.compare("Left") == 0)
+            {
+                board.getPlayer() -> setCurrentAnimation("StandLeft");
+            }
+            
+            board.getPlayer() -> stop();
+            
+        }
         
         keyPressed = false;
         
-        board.getPeach() -> update(frameTime);
+        board.getPlayer() -> update(frameTime);
 
         // Clear screen
         window.clear();
