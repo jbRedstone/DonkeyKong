@@ -14,7 +14,7 @@
 class Platform : public InvisibleSprite
 {
 public:
-    Platform(const sf::Texture & spriteMap, InvisibleSpriteMap::const_iterator i);
+    Platform(const LocationRectangle locRec, int platformNum);
 };
 
 #endif /* Platform_hpp */

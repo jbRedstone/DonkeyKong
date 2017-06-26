@@ -10,23 +10,26 @@
 #ifndef Sprite_hpp
 #define Sprite_hpp
 
-#include <SFML/Graphics/Texture.hpp>
+#include <SFML/Graphics.hpp>
 #include "types.hpp"
 
 class Sprite
 {
 public:
     
-    Sprite(const sf::Texture & spriteMap, Size size, Location location);
+    Sprite(const sf::Texture & spriteMap, std::string type);
     
-    virtual void draw();
-    
+    sf::FloatRect getBounds();
+    bool meet(std::shared_ptr<Sprite> otherGuy);
+    std::string getType();
+        
 protected:
     
-    std::shared_ptr<sf::Texture> m_spriteMap;
-    
+    sf::Sprite m_sprite;
+
     Size m_frameSize;
     Location m_location;
+    std::string m_type;
 };
 
 #endif /* Sprite_hpp */

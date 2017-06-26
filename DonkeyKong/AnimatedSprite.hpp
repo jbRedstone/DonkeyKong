@@ -4,6 +4,7 @@
 //
 //  Created by Joshua Rubin on 12/06/2017.
 //
+#pragma once
 
 #ifndef AnimatedSprite_hpp
 #define AnimatedSprite_hpp
@@ -15,52 +16,44 @@
 #include <SFML/System/Vector2.hpp>
 #include <cmath>
 #include "Sprite.hpp"
+#include "Platform.hpp"
 #include "types.hpp"
 
 using Utilities::Animation;
+using Utilities::Exception;
 
-class AnimatedSprite : public Sprite, public sf::Drawable, public sf::Transformable
+class AnimatedSprite : public Sprite
 {
 public:
     
-    AnimatedSprite(const sf::Texture & spriteMap, Size size, Location location, std::vector<NumOfFrameType>);
+    AnimatedSprite(const sf::Texture & spriteMap, std::string type, std::vector<NumOfFrameType> animationsVector);
     
-    void update(sf::Time deltaTime);
+    virtual void update();
     void play();
     void play(std::string action);
     void pause();
-    void stop();
-    
+    virtual void stop();
+
+    void setLooped(bool b);
     void setCurrentAnimation(std::string action);
-    void setFrameTime(sf::Time time);
-    void setLooped(bool looped);
-    void setFrame(FrameVector::const_iterator newFrame, bool resetTime = true);
-
-    std::shared_ptr<Animation> getCurrentAnimation() const;
-    sf::FloatRect getLocalBounds() const;
-    sf::FloatRect getGlobalBounds() const;
-    bool isLooped() const;
-    bool isPlaying() const;
-    sf::Time getFrameTime() const;
+    void setFrame(FrameVector::const_iterator newFrame);
     
-    void draw(sf::RenderWindow & window) ;
+    void draw(sf::RenderWindow & window);
 
-private:
+protected:
     
     std::map<std::string, std::shared_ptr<Animation>> m_animations;
     std::shared_ptr<Animation> m_currentAnimation;
     
-    sf::Time m_frameTime = sf::seconds(0.2);
-    sf::Time m_currentTime;
+    sf::Clock m_clock;
     
     FrameVector::const_iterator m_currentFrame;
     
-    bool m_isPaused = false;
-    bool m_isLooped = true;
+    bool m_paused = false;
+    bool m_looped = true;
     
-    sf::Sprite m_sprite;
-
-//    sf::Vertex m_vertices[4];
+    sf::CircleShape m_dot;
+    sf::CircleShape m_dot2;
 };
 
 

@@ -8,8 +8,8 @@
 
 #include "Ladder.hpp"
 
-Ladder::Ladder(const sf::Texture & spriteMap, InvisibleSpriteMap::const_iterator i)
-: InvisibleSprite(spriteMap,
-                  Size(i->second.width, i->second.height),
-                  Location(i->second.left, i->second.height))
-{}
+Ladder::Ladder(const LocationRectangle locRec)
+: InvisibleSprite(Size(locRec.width, locRec.height),
+                  Location(locRec.left, locRec.top))
+{
+}

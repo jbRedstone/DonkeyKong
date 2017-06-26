@@ -5,6 +5,7 @@
 //  Created by Joshua Rubin on 12/06/2017.
 //  Copyright © 2017 Joshua Rubin. All rights reserved.
 //
+#pragma once
 
 #ifndef InanimateSprite_hpp
 #define InanimateSprite_hpp
@@ -14,10 +15,11 @@
 class InanimateSprite : public Sprite
 {
 public:
-    InanimateSprite(const sf::Texture & spriteMap, Size size, Location location, std::string type);
+    
+    InanimateSprite(const sf::Texture & spriteMap, std::string type);
     
     void draw(sf::RenderWindow & window);
-private:
-    sf::Sprite m_sprite;
+    void drawRight(sf::RenderWindow & window, float rightShift);
+
 };
 #endif /* InanimateSprite_hpp */

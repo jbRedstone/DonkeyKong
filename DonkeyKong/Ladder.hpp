@@ -14,7 +14,7 @@
 class Ladder : public InvisibleSprite
 {
 public:
-    Ladder(const sf::Texture & spriteMap, InvisibleSpriteMap::const_iterator i);
+    Ladder(const LocationRectangle locRec);
 };
 
 #endif /* Ladder_hpp */
