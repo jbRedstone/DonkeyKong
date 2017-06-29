@@ -182,7 +182,6 @@ void Player::update()
 void Player::looseLife()
 {
     stop();
-
     
     m_onLadder = false;
     m_isJumping = false;
@@ -201,6 +200,7 @@ void Player::looseLife()
     m_sprite.setOrigin(0, - m_frameSize.y);
     
     move(Movement(0,0));
+    gravity();
     m_dying = true;
     m_deathClock.restart();
     update();
