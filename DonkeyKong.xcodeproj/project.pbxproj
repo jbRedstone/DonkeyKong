@@ -9,10 +9,6 @@
 /* Begin PBXBuildFile section */
 		8BAB23251EEECA37003E3DED /* ResourcePath.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8BAB23241EEECA37003E3DED /* ResourcePath.mm */; };
 		8BAB23281EEECA37003E3DED /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8BAB23271EEECA37003E3DED /* main.cpp */; };
-		8BAB232B1EEECA37003E3DED /* cute_image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8BAB232A1EEECA37003E3DED /* cute_image.jpg */; };
-		8BAB232D1EEECA37003E3DED /* nice_music.ogg in Resources */ = {isa = PBXBuildFile; fileRef = 8BAB232C1EEECA37003E3DED /* nice_music.ogg */; };
-		8BAB232F1EEECA37003E3DED /* sansation.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8BAB232E1EEECA37003E3DED /* sansation.ttf */; };
-		8BAB23311EEECA37003E3DED /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BAB23301EEECA37003E3DED /* icon.png */; };
 		8BAB23391EEECB3D003E3DED /* Sprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8BAB23371EEECB3D003E3DED /* Sprite.cpp */; };
 		8BAB233C1EEECB48003E3DED /* AnimatedSprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8BAB233A1EEECB48003E3DED /* AnimatedSprite.cpp */; };
 		8BAB233F1EEECB55003E3DED /* InanimateSprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8BAB233D1EEECB55003E3DED /* InanimateSprite.cpp */; };
@@ -22,6 +18,9 @@
 		8BB74F191EFCE4B0002F502A /* MoveableSprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8BB74F171EFCE4B0002F502A /* MoveableSprite.cpp */; };
 		8BB74F1C1EFD55BC002F502A /* AutoMoveSprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8BB74F1A1EFD55BC002F502A /* AutoMoveSprite.cpp */; };
 		8BB74F1F1EFD583C002F502A /* Barrel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8BB74F1D1EFD583C002F502A /* Barrel.cpp */; };
+		8BB74F431F022F3E002F502A /* arcadeClassic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8BB74F421F022F3E002F502A /* arcadeClassic.ttf */; };
+		8BB74F461F0230D2002F502A /* Text.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8BB74F441F0230D2002F502A /* Text.cpp */; };
+		8BB74F481F02C430002F502A /* highScore.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8BB74F471F02C430002F502A /* highScore.txt */; };
 		8BE9EB181EF01CBF00E59E69 /* Player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8BE9EB161EF01CBF00E59E69 /* Player.cpp */; };
 		8BE9EB1F1EF2C39700E59E69 /* types.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8BE9EB1E1EF2C39700E59E69 /* types.cpp */; };
 /* End PBXBuildFile section */
@@ -32,10 +31,6 @@
 		8BAB23241EEECA37003E3DED /* ResourcePath.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ResourcePath.mm; sourceTree = "<group>"; };
 		8BAB23261EEECA37003E3DED /* ResourcePath.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ResourcePath.hpp; sourceTree = "<group>"; };
 		8BAB23271EEECA37003E3DED /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		8BAB232A1EEECA37003E3DED /* cute_image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cute_image.jpg; sourceTree = "<group>"; };
-		8BAB232C1EEECA37003E3DED /* nice_music.ogg */ = {isa = PBXFileReference; lastKnownFileType = file; path = nice_music.ogg; sourceTree = "<group>"; };
-		8BAB232E1EEECA37003E3DED /* sansation.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = sansation.ttf; sourceTree = "<group>"; };
-		8BAB23301EEECA37003E3DED /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		8BAB23371EEECB3D003E3DED /* Sprite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Sprite.cpp; sourceTree = "<group>"; };
 		8BAB23381EEECB3D003E3DED /* Sprite.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Sprite.hpp; sourceTree = "<group>"; };
 		8BAB233A1EEECB48003E3DED /* AnimatedSprite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AnimatedSprite.cpp; sourceTree = "<group>"; };
@@ -54,6 +49,10 @@
 		8BB74F1B1EFD55BC002F502A /* AutoMoveSprite.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = AutoMoveSprite.hpp; sourceTree = "<group>"; };
 		8BB74F1D1EFD583C002F502A /* Barrel.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Barrel.cpp; sourceTree = "<group>"; };
 		8BB74F1E1EFD583C002F502A /* Barrel.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Barrel.hpp; sourceTree = "<group>"; };
+		8BB74F421F022F3E002F502A /* arcadeClassic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = arcadeClassic.ttf; sourceTree = "<group>"; };
+		8BB74F441F0230D2002F502A /* Text.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Text.cpp; sourceTree = "<group>"; };
+		8BB74F451F0230D2002F502A /* Text.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Text.hpp; sourceTree = "<group>"; };
+		8BB74F471F02C430002F502A /* highScore.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = highScore.txt; sourceTree = "<group>"; };
 		8BE9EB161EF01CBF00E59E69 /* Player.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Player.cpp; sourceTree = "<group>"; };
 		8BE9EB171EF01CBF00E59E69 /* Player.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Player.hpp; sourceTree = "<group>"; };
 		8BE9EB1E1EF2C39700E59E69 /* types.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = types.cpp; sourceTree = "<group>"; };
@@ -112,7 +111,8 @@
 				8BE9EB161EF01CBF00E59E69 /* Player.cpp */,
 				8BB74F1E1EFD583C002F502A /* Barrel.hpp */,
 				8BB74F1D1EFD583C002F502A /* Barrel.cpp */,
-				8BAB23461EEFEE1B003E3DED /* SpriteMap.png */,
+				8BB74F451F0230D2002F502A /* Text.hpp */,
+				8BB74F441F0230D2002F502A /* Text.cpp */,
 				8BAB23291EEECA37003E3DED /* Resources */,
 				8BAB23221EEECA37003E3DED /* Supporting Files */,
 			);
@@ -130,10 +130,9 @@
 		8BAB23291EEECA37003E3DED /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				8BAB232A1EEECA37003E3DED /* cute_image.jpg */,
-				8BAB232C1EEECA37003E3DED /* nice_music.ogg */,
-				8BAB232E1EEECA37003E3DED /* sansation.ttf */,
-				8BAB23301EEECA37003E3DED /* icon.png */,
+				8BB74F471F02C430002F502A /* highScore.txt */,
+				8BB74F421F022F3E002F502A /* arcadeClassic.ttf */,
+				8BAB23461EEFEE1B003E3DED /* SpriteMap.png */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -196,11 +195,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8BAB23311EEECA37003E3DED /* icon.png in Resources */,
-				8BAB232F1EEECA37003E3DED /* sansation.ttf in Resources */,
-				8BAB232D1EEECA37003E3DED /* nice_music.ogg in Resources */,
-				8BAB232B1EEECA37003E3DED /* cute_image.jpg in Resources */,
+				8BB74F481F02C430002F502A /* highScore.txt in Resources */,
 				8BAB23471EEFEE1B003E3DED /* SpriteMap.png in Resources */,
+				8BB74F431F022F3E002F502A /* arcadeClassic.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -233,6 +230,7 @@
 				8BB74F1F1EFD583C002F502A /* Barrel.cpp in Sources */,
 				8BAB234A1EEFEE69003E3DED /* Board.cpp in Sources */,
 				8BAB233C1EEECB48003E3DED /* AnimatedSprite.cpp in Sources */,
+				8BB74F461F0230D2002F502A /* Text.cpp in Sources */,
 				8BB74F1C1EFD55BC002F502A /* AutoMoveSprite.cpp in Sources */,
 				8BAB23251EEECA37003E3DED /* ResourcePath.mm in Sources */,
 				8BE9EB181EF01CBF00E59E69 /* Player.cpp in Sources */,
@@ -336,6 +334,7 @@
 		8BAB23351EEECA37003E3DED /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++14";
 				INFOPLIST_FILE = "DonkeyKong/DonkeyKong-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -345,6 +344,7 @@
 		8BAB23361EEECA37003E3DED /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++14";
 				INFOPLIST_FILE = "DonkeyKong/DonkeyKong-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";

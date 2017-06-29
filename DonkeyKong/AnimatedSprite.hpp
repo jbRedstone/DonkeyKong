@@ -38,6 +38,8 @@ public:
     void setCurrentAnimation(std::string action);
     void setFrame(FrameVector::const_iterator newFrame);
     
+    bool getPaused();
+    
     void draw(sf::RenderWindow & window);
 
 protected:

@@ -30,6 +30,7 @@ typedef std::vector<LocationRectangle> FrameVector;
 typedef std::vector<std::shared_ptr<Platform>> PlatformVector;
 typedef std::map<std::string, Size> SizeMap;
 typedef std::map<std::string, Location> LocationMap;
+typedef std::map<std::string, std::pair<std::string, std::pair<Location, Size>>> TextMap;
 
 //--------------------------Operations---------------------------
 
@@ -39,6 +40,7 @@ Size operator / (const Size & size, const LocationRectangle & locRec);
 Size operator * (const Size & s1, const Size s2);
 Location operator * (const Size & size, const Location & location);
 Size operator / (const Size & size, const float & num);
+std::pair<Location, Size> operator * (const Size & size, const std::pair<Location, Size> & pair);
 
 //--------------------------Namespaces------------------------------
 
@@ -57,7 +59,11 @@ namespace Consts
     const sf::Time MARIO_STAND_TIME = sf::seconds(4);
     const sf::Time MARIO_CRY_TIME = sf::seconds(2);
     const sf::Time DEATH_TIME = sf::seconds(1.5);
+    const sf::Time SCORE_FADE_TIME = sf::seconds(1);
+    const sf::Time WIN_TIME = sf::seconds(3);
+    const sf::Time FEMINISM_TIME = sf::seconds(0.8);
     const int WINDOW_REFRESH_RATE = 60;
+    const int BARREL_FREQUENCY = 5;
     //Fixme: put more here
 }
 
@@ -107,6 +113,18 @@ namespace Maps
         {"MarioCry1", LocationRectangle(0,163,39,15) },
         {"MarioCry2", LocationRectangle(0,178,39,16) },
         {"MarioStand1", LocationRectangle(0,194,12,16) },
+        {"Heart", LocationRectangle(0,211,15,13) },
+        {"BrokenHeart", LocationRectangle(16,211,16,13) },
+        {"DonkeyKongWords1", LocationRectangle(230,497,200,96) },
+        {"DonkeyKongWords2", LocationRectangle(230,497,200,96) },
+        {"DonkeyKongWords3", LocationRectangle(230,594,200,96) },
+        {"DonkeyKongWords4", LocationRectangle(230,594,200,96) },
+        {"DonkeyKongWordsGone1", LocationRectangle(230,594,200,96) },
+        {"#feminism1", LocationRectangle(5,756,298,44)},
+        {"#feminismGone1", LocationRectangle(5,810,298,44)},
+
+
+
 
 
 
@@ -126,20 +144,45 @@ namespace Maps
         {"Life", (boardToLevelRatio * Size(7, 8)) / 2},
         {"DK", (boardToLevelRatio * Size(37, 32)) / 2},
         {"Mario", (boardToLevelRatio * Size(16, 22)) / 2},
+        {"Heart", (boardToLevelRatio * Size(15, 13)) / 2},
+        {"DonkeyKongWords", (boardToLevelRatio * Size(200, 96))},
+        {"#feminism", (boardToLevelRatio * Size(150, 40))},
+
+
 
     };
     
     const LocationMap LOC_MAP =
     {
         {"Level", Location(0,0)},
-        {"Peach", boardToLevelRatio * Location(52,204)},
+        {"Peach", boardToLevelRatio * Location(30,204)},
         {"Barrel", boardToLevelRatio * Location(27,42)},
         {"BarrelEnd", boardToLevelRatio * Location(0,215)},
         {"FourBarrels", boardToLevelRatio * Location(0,36)},
         {"FireBarrel", boardToLevelRatio * Location(10,201)},
-        {"Life", boardToLevelRatio * Location(200,4)},
+        {"Life", boardToLevelRatio * Location(200,13)},
         {"DK", boardToLevelRatio * Location(12,36)},
         {"Mario", boardToLevelRatio * Location(88,13)},
+        {"WinSpot", boardToLevelRatio * Location(116,13)},
+        {"Heart", boardToLevelRatio * Location(102,11)},
+        {"DonkeyKongWords", boardToLevelRatio * Location(14,30)},
+        {"#feminism", boardToLevelRatio * Location(30,90)},
+
+
+    };
+    
+    const TextMap TEXT_MAP =
+    {
+        {"Score", { "Score" , std::pair<Location, Size>(boardToLevelRatio * Location(16,0) , (boardToLevelRatio / 2) * Size(40,10))}},
+        {"HighScore", { "High  Score" , std::pair<Location, Size>(boardToLevelRatio * Location(124,0) , (boardToLevelRatio / 2) * Size(80,10))}},
+        {"ScoreNum", { "00000" , std::pair<Location, Size>(boardToLevelRatio * Location(26,7) , (boardToLevelRatio / 2) * Size(6,10))}},
+        {"HighScoreNum", { "00000" , std::pair<Location, Size>(boardToLevelRatio * Location(144,7) , (boardToLevelRatio / 2) * Size(6,10))}},
+        {"SmallScoreNum", { "100" , std::pair<Location, Size>(boardToLevelRatio * Location(0,0) , (boardToLevelRatio / 2) * Size(9,5))}},
+        {"Lives", { "Lives" , std::pair<Location, Size>(boardToLevelRatio * Location(202,0) , (boardToLevelRatio / 2) * Size(40,10))}},
+        {"EnterPlay", { "Press  Enter  to  play" , std::pair<Location, Size>(Location(650,1000) , (boardToLevelRatio / 2) * Size(150,10))}},
+        {"EnterEnd", { "Press  Enter  to  exit" , std::pair<Location, Size>(Location(650,1000) , (boardToLevelRatio / 2) * Size(150,10))}},
+        {"GameOver", { "GAME  OVER" , std::pair<Location, Size>(Location(700,200) , (boardToLevelRatio / 2) * Size(200,40))}},
+        {"WellDone", { "WELL  DONE" , std::pair<Location, Size>(Location(700,200) , (boardToLevelRatio / 2) * Size(200,40))}},
 
 
 

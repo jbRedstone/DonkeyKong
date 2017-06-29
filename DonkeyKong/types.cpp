@@ -85,3 +85,9 @@ Location operator * (const Size & size, const Location & location)
 {
     return Location(size.x * location.first, size.y * location.second);
 }
+
+std::pair<Location, Size> operator * (const Size & size, const std::pair<Location, Size> & pair)
+{
+    return std::pair<Location, Size>(size * pair.first, size * pair.second);
+}
+

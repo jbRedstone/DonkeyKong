@@ -14,6 +14,9 @@ MoveableSprite::MoveableSprite(const sf::Texture & spriteMap, std::string type, 
 
 void MoveableSprite::move(Movement & movement)
 {
+    if (m_frozen)
+        return;
+    
     environmentCheck(movement);
     
     m_location.first += movement.x;
@@ -188,17 +191,10 @@ float MoveableSprite::platformDistance()
         ++i;
     }
     
-//    int platformNum = std::distance(Maps::PLATFORM_MAP.begin(), i);
-    
     float distanceToFlatPlatform = (i -> second.top) - (m_location.second + m_frameSize.y);
-    
-//    if (platformNum == 0 || platformNum == 1 || (platformNum == Maps::PLATFORM_MAP.size() - 1))
-//    {
-//        return distanceToFlatPlatform;
-//    }
+
     
     float distanceFromLeftCornerToSpriteCentre = std::fabsf((i -> second.left) - (m_location.first + (0.5f * m_frameSize.x)));
-//    float distanceFromFlatPlatformToRotatedPlatform = ((2 * (platformNum % 2)) - 1) * distanceFromLeftCornerToSpriteCentre * tanf(Consts::PLATFORM_ROTATION);
     float distanceFromFlatPlatformToRotatedPlatform = distanceFromLeftCornerToSpriteCentre * tanf(Maps::PLATFORM_ROTATION_MAP.find(i -> first) -> second);
     
     return distanceToFlatPlatform - distanceFromFlatPlatformToRotatedPlatform;
@@ -232,18 +228,11 @@ Location MoveableSprite::platformCorner(std::string side)
     return Location (i -> second.left + (i -> second.width * cosf(Maps::PLATFORM_ROTATION_MAP.find(i -> first) -> second)),
                      i -> second.top + i -> second.width * sinf(Maps::PLATFORM_ROTATION_MAP.find(i -> first) -> second));
     
-//    int platformNum = std::distance(Maps::PLATFORM_MAP.begin(), i);
-//    
-//    // If it's one of the flat platforms
-//    if ((platformNum == 0 || platformNum == 1 || platformNum == Maps::PLATFORM_MAP.size() - 1))
-//    {
-//        return Location (i -> second.left + i -> second.width, i -> second.top);
-//    }
-//    
-//    // If even platform number, rotate up from left corner, if odd platform number, rotate down from left corner
-//    return Location (i -> second.left + (i -> second.width * cosf(Consts::PLATFORM_ROTATION)),
-//                     i -> second.top + ((-2 * (platformNum % 2)) + 1) * i -> second.width * sinf(Consts::PLATFORM_ROTATION));
-    
+}
+
+void MoveableSprite::setFreeze(bool b)
+{
+    m_frozen = b;
 }
 
 

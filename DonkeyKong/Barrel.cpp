@@ -117,3 +117,13 @@ bool Barrel::lastLadder()
 
     }
 }
+
+bool Barrel::getScored()
+{
+    return m_scored;
+}
+
+void Barrel::setScored(bool b)
+{
+    m_scored = b;
+}

@@ -28,11 +28,14 @@ public:
     
     float platformDistance();
     Location platformCorner(std::string side);
+    
+    void setFreeze(bool b);
 
 protected:
     
     bool m_onLadder = false;
     InvisibleSpriteMap::const_iterator m_ladderRef = Maps::LADDER_MAP.end();
+    bool m_frozen = false;
     
 };
 

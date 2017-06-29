@@ -126,6 +126,10 @@ void AnimatedSprite::update()
     }
 }
 
+bool AnimatedSprite::getPaused()
+{
+    return m_paused;
+}
 
 void AnimatedSprite::draw(sf::RenderWindow & window)
 {

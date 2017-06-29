@@ -20,8 +20,9 @@ public:
     Sprite(const sf::Texture & spriteMap, std::string type);
     
     sf::FloatRect getBounds();
-    bool meet(std::shared_ptr<Sprite> otherGuy);
+    bool meet(const std::shared_ptr<Sprite> otherGuy);
     std::string getType();
+    Location getLocation();
         
 protected:
     

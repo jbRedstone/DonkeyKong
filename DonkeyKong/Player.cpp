@@ -29,6 +29,9 @@ Player::Player(const sf::Texture & spriteMap)
 
 void Player::move(Movement movement)
 {
+    if (m_frozen)
+        return;
+    
     if (m_dying)
     {
         if (m_deathClock.getElapsedTime() <= Consts::DEATH_TIME)
@@ -206,4 +209,41 @@ void Player::looseLife()
 bool Player::getDying()
 {
     return m_dying;
+}
+
+bool Player::overBarrel(std::shared_ptr<AnimatedSprite> barrelPtr)
+{
+    std::shared_ptr<Barrel> ptr = std::dynamic_pointer_cast<Barrel>(barrelPtr);
+    
+    if (!ptr)
+    {
+        throw Utilities::Exception("Error: player checking if jumped over object which is not barrel");
+    }
+    else if (ptr -> getScored())
+    {
+        return false;
+    }
+    
+    if (!m_isJumping || meet(barrelPtr))
+        return false;
+    
+    bool overBarrel = false;
+    
+    for (int i = 1; i != 4; ++i)
+    {
+        sf::FloatRect squareUnderPlayer = m_sprite.getGlobalBounds();
+        squareUnderPlayer.top += m_frameSize.y * i;
+        
+        overBarrel = overBarrel || squareUnderPlayer.intersects(barrelPtr -> getBounds());
+    }
+    
+    if (overBarrel)
+        ptr -> setScored(true);
+    
+    return overBarrel;
+}
+
+void Player::setLastDirection(std::string lastDirection)
+{
+    m_lastDirection = lastDirection;
 }

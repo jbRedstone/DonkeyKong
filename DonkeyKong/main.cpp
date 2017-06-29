@@ -14,7 +14,7 @@ int main(int, char const**)
 {
     try
     {
-        GamePlay();
+        GamePlay game;
     }
     catch (Exception exception)
     {

@@ -23,9 +23,13 @@ public:
     bool atLadderTop();
     bool lastLadder();
     
+    bool getScored();
+    void setScored(bool b);
+    
 private:
     
     bool m_nextFall;
+    bool m_scored = false;
     
 };
 #endif /* Barrel_hpp */

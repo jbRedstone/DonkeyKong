@@ -10,6 +10,7 @@
 #define Player_hpp
 
 #include "MoveableSprite.hpp"
+#include "Barrel.hpp"
 
 class Player : public MoveableSprite
 {
@@ -27,6 +28,9 @@ public:
     
     void looseLife();
     bool getDying();
+    
+    bool overBarrel(std::shared_ptr<AnimatedSprite> barrelPtr);
+    void setLastDirection(std::string lastDirection);
     
 private:
     

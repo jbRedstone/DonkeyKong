@@ -32,3 +32,8 @@ std::string Sprite::getType()
 {
     return m_type;
 }
+
+Location Sprite::getLocation()
+{
+    return m_location;
+}
